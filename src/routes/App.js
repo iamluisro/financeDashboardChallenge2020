@@ -10,6 +10,7 @@ export const AuthContext = createContext();
 const initialState = {
   isAuthenticated: false,
   user: {},
+  token: ''
 };
 
 const reducer = (state, action) => {
@@ -18,13 +19,15 @@ const reducer = (state, action) => {
     return {
       ...state,
       isAuthenticated: true,
-      user: action.payload.user
+      user: action.payload.user,  
+      token: action.payload.token
     };
     case "LOGOUT": 
     return {
       ...state,
       isAuthenticated: false,
-      user: action.payload.user
+      user: action.payload.user,
+      token: action.payload.token
     };
     default: 
     return state;

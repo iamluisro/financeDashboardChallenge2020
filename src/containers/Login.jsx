@@ -37,9 +37,11 @@ const Login = (props) => {
         payload: data
       })
       console.log(data.user)
+      console.log(data.token)
       document.cookie = `email=${data.user.email}`;
       document.cookie = `name=${data.user.name}`;
       document.cookie = `id=${data.user.id}`;
+      document.cookie = `token=${data.token}`;
       document.cookie = `isAdmin=${data.user.isAdmin}`;
     })
       .catch(err => console.log('Error', err))
