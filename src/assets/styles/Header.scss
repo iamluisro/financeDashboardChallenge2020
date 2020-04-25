@@ -1,0 +1,27 @@
+.Header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url('/src/frontend/assets/img/header-bg.jpg') repeat;
+
+    img {
+        padding: 2rem 3rem;
+        margin: 0;
+        width: 85%;
+    }
+
+
+    ul {
+        list-style-type: none;
+    }
+   
+}
+
+.Header-userLogin {
+    margin: 0 3rem;
+    
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+}

@@ -1,0 +1,87 @@
+@import './Vars.scss';
+
+.login {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0px 30px;
+	min-height: calc(
+		100vh - 250px
+	); /* El ancho será igual al tamaño de todo el height menos 200px (100px del header + 100px del footer) */
+}
+
+.login__container {
+	color: $h2-color;
+	display: flex;
+	flex-direction: column;
+    min-height: 700px;
+    text-align: center;
+    width: 30%;
+}
+
+.login__container--form {
+	display: flex;
+    flex-direction: column;
+    
+    input {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    button {
+        padding: .75rem;
+        background-color: $main-color;
+        color: #ffffff;
+    }
+}
+
+.login__container--form label {
+	font-size: 14px;
+}
+
+.login__container--remember-me {
+	color: #000000;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.login__container--remember-me a {
+	color: #000000;
+	font-size: 1rem;
+	text-decoration: none;
+}
+
+.login__container--remember-me a:hover {
+	text-decoration: underline;
+}
+
+.login__container--social-media > div {
+	align-items: center;
+	display: flex;
+	font-size: 1rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+.login__container--social-media > div > img {
+	margin-right: 10px;
+	width: 30px;
+}
+
+.login__container--register {
+	font-size: 1rem;
+}
+
+.login__container--register a {
+	color: #000000;
+	font-weight: bold;
+	font-size: 1rem;
+	text-decoration: none;
+}
+
+.login__container--register a:hover {
+	text-decoration: underline;
+}
