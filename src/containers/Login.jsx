@@ -1,18 +1,16 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import googleIcon from '../assets/img/google-icon.png';
 import linkedInIcon from '../assets/img/linkedinlogo.png';
-import '../assets/styles/Login.scss'
-import axios from 'axios'
-import { AuthContext } from '../routes/App'
+import '../assets/styles/Login.scss';
+import { AuthContext } from '../routes/App';
 
 const Login = (props) => {
-  const [state, dispatch] = useContext(AuthContext);
-
+  const [dispatch] = useContext(AuthContext);
   const [form, setForm] = useState({
     email: '',
   });
-
 
   const handleInput = (e) => {
     setForm({
@@ -28,25 +26,26 @@ const Login = (props) => {
       method: 'post',
       auth: {
         username: form.email,
-        password: form.password
-      }
+        password: form.password,
+      },
     })
-    .then(({data}) => {
-      dispatch({
-        type: "LOGIN",
-        payload: data
+      .then(({ data }) => {
+        dispatch({
+          type: 'LOGIN',
+          payload: data,
+        });
+        console.log(data.user);
+        console.log(data.token);
+        document.cookie = `email=${data.user.email}`;
+        document.cookie = `name=${data.user.name}`;
+        document.cookie = `id=${data.user.id}`;
+        document.cookie = `token=${data.token}`;
+        document.cookie = `isAdmin=${data.user.isAdmin}`;
+        props.history.push('/');
       })
-      console.log(data.user)
-      console.log(data.token)
-      document.cookie = `email=${data.user.email}`;
-      document.cookie = `name=${data.user.name}`;
-      document.cookie = `id=${data.user.id}`;
-      document.cookie = `token=${data.token}`;
-      document.cookie = `isAdmin=${data.user.isAdmin}`;
-    })
-      .catch(err => console.log('Error', err))
-      .then(response => console.log('Success', response))
-      
+      .catch((err) => console.log('Error', err))
+      .then((response) => console.log('Success', response));
+
     console.log(form.email);
   };
 

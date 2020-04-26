@@ -5,7 +5,7 @@ import '../assets/styles/Admin.scss'
 const APIUsers = 'https://fathomless-thicket-73962.herokuapp.com/api/users'
 
 const Admin = () => {
-    const [state, dispatch] = useContext(AuthContext)
+    const [state] = useContext(AuthContext)
     const [data, setData] = useState([])
     useEffect(() => {
         fetch(APIUsers, {
