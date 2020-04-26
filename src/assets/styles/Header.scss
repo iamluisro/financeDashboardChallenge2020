@@ -1,4 +1,6 @@
-.Header-container {
+@import './Vars.scss';
+
+.Header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,18 +12,49 @@
         width: 85%;
     }
 
+    .Header__userOptions {
+        display: flex;
 
-    ul {
-        list-style-type: none;
+        div {
+            margin: 0 3rem;
+            a {
+                text-decoration: none;
+                color: $navtextColor;
+            }
+        }
     }
-   
+  
 }
 
-.Header-userLogin {
+.Header__userLogin {
     margin: 0 3rem;
     
+    
+        a {
+
+            text-decoration: none;
+            color: $navtextColor;
+        }
+    
+}
+
+.Header__CerraSesion {
+    display: none;
+    margin: 0px 0px 0px 30px;
+	padding: 0px;
+	position: absolute;
+	width: 100px;
+	text-align: right;
+    
     a {
+        color: $navtextColor;
         text-decoration: none;
-        color: #000000;
     }
 }
+
+.Header__userLogin:hover .Header__CerraSesion, .Header__CerraSesion:hover  {
+    display: block;
+    text-decoration: underline;
+}
+
+

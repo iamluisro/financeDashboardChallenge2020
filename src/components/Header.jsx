@@ -7,7 +7,7 @@ import { AuthContext } from '../routes/App'
 const Header = () => { 
   const [state, dispatch] = useContext(AuthContext);
   const hasUser = Object.keys(state.user).length > 0;
-  console.log(`hasUser ${hasUser}`);
+  const isAdmin = (state.user.isAdmin)
 
 const handleLogout = () => {
   dispatch({
@@ -22,20 +22,21 @@ const handleLogout = () => {
 
   return (
 
-  <div className='Header-container'>
+  <div className='Header__container'>
+    <div>
     <Link to='/'>
       <img src={logo} alt='GBM Logo' className='Header__Logo' />
     </Link>
-    <nav>
-      <ul>
-        <li>IPC</li>
-      </ul>
-    </nav>
-    <div className='Header-userLogin'>
+    </div>
+    <div className="Header__userOptions">
+      <div><Link to="/">IPC</Link></div>
+      {isAdmin ? <div><Link to='/admin'>Admin</Link></div> : <div></div>}
+    </div>
+    <div className='Header__userLogin'>
       {hasUser ? 
         <div>
         <p>{state.user.email}</p> 
-        <p><a href='/' onClick={handleLogout}>Cerrar Sesión</a></p>
+        <p className="Header__CerraSesion"><a href='/' onClick={handleLogout}>Cerrar Sesión</a></p>
         </div>
         
         : 

@@ -4,6 +4,7 @@ import Home from '../containers/Home';
 import Login from '../containers/Login';
 import Register from '../containers/Register';
 import Layout from '../components/Layout';
+import Admin from '../containers/Admin'
 import '../assets/styles/App.scss';
 
 export const AuthContext = createContext();
@@ -36,13 +37,14 @@ const reducer = (state, action) => {
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-//  const isAdmin =(state.user.isAdmin);
+  const isAdmin =(state.user.isAdmin);
   return (
   <AuthContext.Provider value={[state, dispatch]}>
   <BrowserRouter>
     <Switch>
       <Layout>
         <Route exact path='/' component={!state.isAuthenticated ? Login : Home} />
+        <Route exact path='/admin' component={!isAdmin ? Login: Admin} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
       </Layout>

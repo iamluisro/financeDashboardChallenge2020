@@ -1,8 +1,10 @@
+@import './Vars.scss';
+
 .Footer__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #AB9766;
+    background-color: $mainColor;
     color: #FFFF;
     padding: 2rem 3rem;
 }
