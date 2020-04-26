@@ -10,7 +10,12 @@ import '../assets/styles/App.scss';
 export const AuthContext = createContext();
 const initialState = {
   isAuthenticated: false,
-  user: {},
+  user: {
+    name: '',
+    email: '',
+    password: '',
+    isAdmin: false,
+  },
   token: '',
 };
 
@@ -28,6 +33,13 @@ const reducer = (state, action) => {
         ...state,
         isAuthenticated: false,
         user: action.payload.user,
+        token: action.payload.token,
+      };
+    case 'REGISTER_USER':
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: action.payload,
         token: action.payload.token,
       };
     default:

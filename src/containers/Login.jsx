@@ -7,7 +7,8 @@ import '../assets/styles/Login.scss';
 import { AuthContext } from '../routes/App';
 
 const Login = (props) => {
-  const [dispatch] = useContext(AuthContext);
+  // eslint-disable-next-line no-unused-vars
+  const [state, dispatch] = useContext(AuthContext);
   const [form, setForm] = useState({
     email: '',
   });
