@@ -45,7 +45,7 @@ const Admin = (props) => {
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>{user.isAdmin.toString()}</td>
-            <td onClick={() => deleteUser(user._id)}>Delete</td>
+            <td className='Admin__Table--deleteStyle' onClick={() => deleteUser(user._id)}>Delete</td>
           </tr>
         );
       }) : 'Loading';

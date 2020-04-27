@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import googleIcon from '../assets/img/google-icon.png';
-import linkedInIcon from '../assets/img/linkedinlogo.png';
 import '../assets/styles/Login.scss';
 import { AuthContext } from '../routes/App';
 
@@ -72,29 +70,7 @@ const Login = (props) => {
           <button className='button' type='submit'>
             Iniciar sesión
           </button>
-          <div className='login__container--remember-me'>
-            <label htmlFor='cbox1'>
-              <input type='checkbox' id='cbox1' value='first_checkbox' />
-              Recuérdame
-            </label>
-            <a href='/'>Olvidé mi contraseña</a>
-          </div>
         </form>
-        <section className='login__container--social-media'>
-          <div>
-            <img src={googleIcon} alt='googleIcon' />
-            {' '}
-            Inicia sesión con Google
-            {' '}
-          </div>
-          <div>
-            <img src={linkedInIcon} alt='Linkedin Logo' />
-            {' '}
-            Inicia sesión con LinkedIn
-            {' '}
-          </div>
-
-        </section>
         <p className='login__container--register'>
           ¿No tienes cuenta?
           {' '}

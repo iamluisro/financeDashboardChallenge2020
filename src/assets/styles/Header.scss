@@ -4,7 +4,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: url('/src/frontend/assets/img/header-bg.jpg') repeat;
 
     img {
         padding: 2rem 3rem;
@@ -24,6 +23,7 @@
         }
     }
   
+ 
 }
 
 .Header__userLogin {
@@ -57,4 +57,15 @@
     text-decoration: underline;
 }
 
+@media only screen and (max-width: 600px) {
+    .Header__container {
+     display: flex; 
+     flex-direction: column;
 
+     img {
+        padding: 2rem 3rem;
+        margin: 0;
+        width: 50%;
+    }
+    }
+  }
