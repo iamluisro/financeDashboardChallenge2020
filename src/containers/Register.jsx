@@ -26,7 +26,6 @@ const Register = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form);
     axios.post('https://fathomless-thicket-73962.herokuapp.com/api/auth/sign-up', form)
       .then((res) => {
         console.log(res);

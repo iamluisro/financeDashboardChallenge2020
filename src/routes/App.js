@@ -9,14 +9,14 @@ import '../assets/styles/App.scss';
 
 export const AuthContext = createContext();
 const initialState = {
-  isAuthenticated: false,
+  isAuthenticated: localStorage.getItem('isAuthenticated') || false,
   user: {
-    name: '',
-    email: '',
+    name: localStorage.getItem('name') || '',
+    email: localStorage.getItem('email') || '',
     password: '',
-    isAdmin: false,
+    isAdmin: JSON.parse(localStorage.getItem('isAdmin')) || '',
   },
-  token: '',
+  token: localStorage.getItem('token') || '',
 };
 
 const reducer = (state, action) => {
@@ -49,7 +49,9 @@ const reducer = (state, action) => {
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { isAdmin } = state.user;
+  const isAdmin = (state.user.isAdmin === true);
+  console.log(`appjs ${isAdmin}`);
+
   return (
     <AuthContext.Provider value={[state, dispatch]}>
       <BrowserRouter>

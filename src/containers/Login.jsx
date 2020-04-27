@@ -35,13 +35,18 @@ const Login = (props) => {
           type: 'LOGIN',
           payload: data,
         });
-        console.log(data.user);
-        console.log(data.token);
+        /*         console.log(data.user);
+        console.log(data.token); */
         document.cookie = `email=${data.user.email}`;
         document.cookie = `name=${data.user.name}`;
         document.cookie = `id=${data.user.id}`;
         document.cookie = `token=${data.token}`;
-        document.cookie = `isAdmin=${data.user.isAdmin}`;
+        localStorage.setItem('email', `${data.user.email}`);
+        localStorage.setItem('name', `${data.user.name}`);
+        localStorage.setItem('id', `${data.user.id}`);
+        localStorage.setItem('token', `${data.token}`);
+        localStorage.setItem('isAdmin', `${data.user.isAdmin}`);
+        localStorage.setItem('isAuthenticated', `${true}`);
         props.history.push('/');
       })
       .catch((err) => console.log('Error', err))

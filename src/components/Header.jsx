@@ -6,8 +6,9 @@ import { AuthContext } from '../routes/App';
 
 const Header = () => {
   const [state, dispatch] = useContext(AuthContext);
-  const hasUser = Object.keys(state.user).length > 0;
+  const { isAuthenticated } = state;
   const { isAdmin } = state.user;
+  console.log(`isAdmin in header ${isAdmin}`);
 
   const handleLogout = () => {
     dispatch({
@@ -18,6 +19,12 @@ const Header = () => {
     document.cookie = 'name=';
     document.cookie = 'id=';
     document.cookie = 'token=';
+    localStorage.setItem('email', '');
+    localStorage.setItem('name', '');
+    localStorage.setItem('id', '');
+    localStorage.setItem('token', '');
+    localStorage.removeItem('isAdmin');
+    localStorage.setItem('isAuthenticated', '');
   };
 
   return (
@@ -32,8 +39,8 @@ const Header = () => {
         <div><Link to='/'>IPC</Link></div>
         {isAdmin ? <div><Link to='/admin'>Admin</Link></div> : <div />}
       </div>
-      <div className='Header__userLogin'>
-        {hasUser ? (
+      <div className='Header__userLogin' data-testid='Header__userLogin'>
+        {isAuthenticated ? (
           <div>
             <p>{state.user.email}</p>
             <p className='Header__CerraSesion'><a href='/' onClick={handleLogout}>Cerrar Sesión</a></p>

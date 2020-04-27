@@ -4,7 +4,7 @@ import '../assets/styles/Footer.scss';
 const Footer = () => {
   return (
     <div className='Footer__container'>
-      <address>
+      <address data-testid='companyAddress'>
         GBM
         <br />
         DISTRITO FEDERAL INSURGENTES (Matriz)
@@ -17,7 +17,7 @@ const Footer = () => {
         <br />
         Fax: 01 (55) 5480-6645
       </address>
-      <div>
+      <div data-testid='LuisContact'>
         <p>Created by Luis Rodriguez</p>
         <p>April 20-27, 2020</p>
         <div>Social Media</div>
