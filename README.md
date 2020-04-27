@@ -12,7 +12,7 @@ There were two main parts to the project:
 1. The Frontend (bootstrapped with create-react-app).
 2. The Backend (created with Node.js, Express, MongoDB).
 
-[To view project click here.](Viewhttps://gbmchallengebyiamluisro.netlify.app/)
+[To view project click here.](https://gbmchallengebyiamluisro.netlify.app/)
 
 For testing: 
 ```
@@ -74,6 +74,7 @@ Each component and container have their own SCSS files and a Variables sheet (va
 Frontend deployed through Netlify. 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/09c31f29-7ee0-4e62-82ae-7dcec398180d/deploy-status)](https://app.netlify.com/sites/gbmchallengebyiamluisro/deploys)
 
+[To view project click here.](https://gbmchallengebyiamluisro.netlify.app/)
 
 
 # 2. Backend
