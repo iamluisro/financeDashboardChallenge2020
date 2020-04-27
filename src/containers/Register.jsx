@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../routes/App';
 import '../assets/styles/Register.scss';
-import googleIcon from '../assets/img/google-icon.png';
-import linkedInIcon from '../assets/img/linkedinlogo.png';
 
 const Register = (props) => {
   // eslint-disable-next-line no-unused-vars
@@ -68,25 +66,10 @@ const Register = (props) => {
             Regístrate
           </button>
         </form>
-        <section className='register__container--social-media'>
-          <div>
-            {' '}
-            Regístrate con tu cuenta de Google
-            {' '}
-            <img src={googleIcon} alt='googleIcon' />
-          </div>
-          <div>
-            {' '}
-            Regístrate con tu cuenta de LinkedIn
-            {' '}
-            <img src={linkedInIcon} alt='Linkedin Logo' />
-          </div>
-
-        </section>
         <p className='register__container--register'>
-          ¿No tienes cuenta?
+          Ya tienes cuenta?
           {' '}
-          <Link to='/register'>Regístrate</Link>
+          <Link to='/login'>Inicia Sesión</Link>
         </p>
       </section>
     </section>

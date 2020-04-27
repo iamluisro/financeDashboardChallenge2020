@@ -8,7 +8,6 @@ const Header = () => {
   const [state, dispatch] = useContext(AuthContext);
   const { isAuthenticated } = state;
   const { isAdmin } = state.user;
-  console.log(`isAdmin in header ${isAdmin}`);
 
   const handleLogout = () => {
     dispatch({

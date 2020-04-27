@@ -17,10 +17,8 @@ const Admin = (props) => {
   }, [state.token]);
   const userData = data;
   const hasData = (data === undefined) ? 'Loading' : userData;
-  console.log(userData);
 
   const deleteUser = (userId) => {
-    console.log(userId);
     axios({
       url: `https://fathomless-thicket-73962.herokuapp.com/api/users/${userId}`,
       headers: { Authorization: `Bearer ${state.token}` },
@@ -36,7 +34,6 @@ const Admin = (props) => {
           .then((response) => response.json())
           .then((data) => setData(data.data)),
       )
-      .then((res) => console.log(res))
       .catch((err) => new Error(err));
   };
 
@@ -48,7 +45,7 @@ const Admin = (props) => {
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>{user.isAdmin.toString()}</td>
-            <td onClick={() => deleteUser(user._id)}>Delete</td>
+            <td className='Admin__Table--deleteStyle' onClick={() => deleteUser(user._id)}>Delete</td>
           </tr>
         );
       }) : 'Loading';

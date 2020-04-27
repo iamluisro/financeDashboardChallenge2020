@@ -22,6 +22,15 @@
         text-align: left;
       }
 
+    .Admin__Table--deleteStyle {
+      cursor: pointer
+    }
+    
+    .Admin__Table--deleteStyle:hover {
+      cursor: pointer;
+      background: $mainColor;
+    }
+
       tr:nth-child(even) {
         background: rgba(171,151,102,.2);
       }
