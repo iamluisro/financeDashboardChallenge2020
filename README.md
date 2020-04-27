@@ -14,6 +14,18 @@ There were two main parts to the project:
 
 [To view project click here.](Viewhttps://gbmchallengebyiamluisro.netlify.app/)
 
+For testing: 
+```
+Admin User
+email: admin@gbmtest.com
+password: root 
+````
+```
+Non-Admin User
+email: user@gbmtest.com 
+password: secret
+```
+
 # 1. Frontend
 ```
 Frontend Struture
