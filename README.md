@@ -107,7 +107,6 @@ API deployed through Heroku.
 * Cleanup CSS for optimal mobile responsiveness. This was overlooked by other aspects like using Context API for state management. 
 * Implementing Login with additional Services using oAuth2 (Google, Linkedin).
 * Manipulate data in API to transform dates from ISO Date to a simpler format (ie: HH:MM::SS and have the date be displayed at the top of the chart).
-* 
 
 
 
