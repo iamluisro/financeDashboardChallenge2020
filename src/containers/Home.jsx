@@ -15,8 +15,6 @@ const Home = () => {
     fetch(API).then((response) => response.json()).then((data) => setData(data.resultObj));
   }, []);
 
-  console.log(data[0]);
-
   return (
     <div>
 

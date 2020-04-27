@@ -35,8 +35,6 @@ const Login = (props) => {
           type: 'LOGIN',
           payload: data,
         });
-        /*         console.log(data.user);
-        console.log(data.token); */
         document.cookie = `email=${data.user.email}`;
         document.cookie = `name=${data.user.name}`;
         document.cookie = `id=${data.user.id}`;
@@ -49,10 +47,7 @@ const Login = (props) => {
         localStorage.setItem('isAuthenticated', `${true}`);
         props.history.push('/');
       })
-      .catch((err) => console.log('Error', err))
-      .then((response) => console.log('Success', response));
-
-    console.log(form.email);
+      .catch((err) => console.log('Error', err));
   };
 
   return (
