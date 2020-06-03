@@ -50,7 +50,6 @@ const reducer = (state, action) => {
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const isAdmin = (state.user.isAdmin === true);
-  //console.log(`appjs ${isAdmin}`);
 
   return (
     <AuthContext.Provider value={[state, dispatch]}>
