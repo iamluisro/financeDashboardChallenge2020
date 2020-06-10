@@ -4,11 +4,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #f2f2f2f2;
 
     img {
-        padding: 2rem 3rem;
+        padding: 1rem;
         margin: 0;
-        width:25%;
+        width: 18%;
     }
 
     .Header__userOptions {
@@ -60,12 +61,10 @@
 @media only screen and (max-width: 600px) {
     .Header__container {
      display: flex; 
-     flex-direction: column;
 
      img {
-        padding: 2rem 3rem;
         margin: 0;
-        width: 50%;
+        width: 100%;
     }
     }
   }

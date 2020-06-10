@@ -60,7 +60,7 @@ const Register = (props) => {
           />
           <label htmlFor='cbox1'>
             <input type='checkbox' id='cbox1' value={true} name='isAdmin' onChange={handleInput} />
-            Is this use admin?
+            Is this user an admin?
           </label>
           <button className='button' type='submit'>
             Regístrate
