@@ -1,6 +1,8 @@
+@import './Vars.scss';
+
 body {
     margin: 0; 
-    font-family: Helvetica, sans-serif;
+    font-family: $themeFont;
     width: 100%;
     font-size: 16px;
 }

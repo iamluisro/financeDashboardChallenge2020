@@ -6,16 +6,7 @@ import moment from 'moment';
 import '../assets/styles/Home.scss';
 import localData from '../utils/data.json';
 
-/* const API = localData; */
-
 const Home = () => {
-/*   const [data, setData] = useState([]);
-
-  useEffect(() => {
-
-    fetch(API).then((response) => response.json()).then((data) => setData(data.resultObj));
-  }, []);
- */
   return (
     <div>
 
