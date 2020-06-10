@@ -12,7 +12,11 @@ There were two main parts to the project:
 1. The Frontend (bootstrapped with create-react-app).
 2. The Backend (created with Node.js, Express, MongoDB).
 
+<<<<<<< HEAD
+[To view project click here.]('https://gbmchallengebyiamluisro.netlify.app/')
+=======
 [To view project click here.](https://gbmchallengebyiamluisro.netlify.app/)
+>>>>>>> 3946dc5eedf6f2da97d2cb1464e5b4d55e15d494
 
 For testing: 
 ```

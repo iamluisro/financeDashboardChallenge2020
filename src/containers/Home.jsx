@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Brush, ResponsiveContainer, Legend,
 } from 'recharts';
 import moment from 'moment';
 import '../assets/styles/Home.scss';
-
-const API = 'https://www.gbm.com.mx/Mercados/ObtenerDatosGrafico?empresa=IPC';
+import localData from '../utils/data.json';
 
 const Home = () => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-
-    fetch(API).then((response) => response.json()).then((data) => setData(data.resultObj));
-  }, []);
-
   return (
     <div>
 
@@ -22,13 +14,13 @@ const Home = () => {
         <h1>ICP Index</h1>
         <ResponsiveContainer width='85%' height='80%' minHeight={200}>
           <LineChart
-            data={data}
+            data={localData}
             syncId='anyId'
             margin={{ top: 10, right: 30, left: 30, bottom: 0 }}
           >
             <CartesianGrid strokeDasharray='3 3' />
             <XAxis dataKey='Fecha' tickFormatter={(time) => moment(time).format('LT')} />
-            <YAxis type='number' domain={['dataMin - 500', 'dataMax + 500']} />
+            <YAxis type='number' />
             <Tooltip />
             <Legend verticalAlign='top' height={36} />
             <Line type='basis' dot={false} dataKey='Precio' stroke='#0085FF' fill='#8884d8' />
@@ -36,7 +28,7 @@ const Home = () => {
         </ResponsiveContainer>
         <ResponsiveContainer width='85%' height='80%' minHeight={200}>
           <LineChart
-            data={data}
+            data={localData}
             syncId='anyId'
             margin={{ top: 10, right: 30, left: 30, bottom: 0 }}
           >
@@ -50,7 +42,7 @@ const Home = () => {
         </ResponsiveContainer>
         <ResponsiveContainer width='85%' height='80%' minHeight={200}>
           <LineChart
-            data={data}
+            data={localData}
             syncId='anyId'
             margin={{ top: 10, right: 30, left: 30, bottom: 0 }}
           >
@@ -60,7 +52,7 @@ const Home = () => {
             <Tooltip />
             <Legend verticalAlign='top' height={36} />
             <Line type='monotone' dot={false} dataKey='Porcentaje' stroke='#AB9766' fill='#8884d8' />
-            <Brush dataKey='Fecha' startIndex={160} />
+            <Brush dataKey='Fecha' startIndex={0} />
           </LineChart>
 
         </ResponsiveContainer>
